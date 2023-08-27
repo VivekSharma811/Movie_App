@@ -51,6 +51,8 @@ android {
 dependencies {
 
     implementation project(":feature:movie:presentation")
+    implementation project(":feature:movie:data")
+    implementation project(":feature:movie:domain")
 
     implementation Deps.core
     implementation CoroutinesLifecycleScope.lifeCycleRuntime

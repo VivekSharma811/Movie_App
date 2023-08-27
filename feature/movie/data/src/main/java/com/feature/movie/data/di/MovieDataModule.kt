@@ -32,7 +32,7 @@ object MovieDataModule {
     @Singleton
     fun provideMovieRepository(
         movieDataSource: MovieDataSource,
-        apiKey: String
+        @Named("api_key") apiKey: String
     ): MovieRepository {
         return MovieRepositoryImpl(movieDataSource, apiKey)
     }

@@ -37,6 +37,7 @@ object Version {
     const val composeUiVersion = "1.3.3"
     const val composeActivity = "1.6.1"
     const val composeMaterial = "1.3.1"
+    const val composeLifecycleRuntimeVersion = "2.6.1"
 
     const val composeNavigation = "2.6.0-alpha05"
 
@@ -131,12 +132,16 @@ object DaggerHilt {
 
 object DaggerHiltTestingTestImpl {
     // For Robolectric tests.
-    const val daggerHiltTestImplRobolectric = "com.google.dagger:hilt-android-testing:${Version.daggerHiltTestImpl}"
-    const val daggerHiltKaptTestRobolectric = "com.google.dagger:hilt-android-compiler:${Version.daggerHiltTestImpl}"
+    const val daggerHiltTestImplRobolectric =
+        "com.google.dagger:hilt-android-testing:${Version.daggerHiltTestImpl}"
+    const val daggerHiltKaptTestRobolectric =
+        "com.google.dagger:hilt-android-compiler:${Version.daggerHiltTestImpl}"
 
     // For instrumented tests.
-    const val daggerHiltAndroidTestImpl = "com.google.dagger:hilt-android-testing:${Version.daggerHiltAndroidTestImpl}"
-    const val daggerHiltAndroidTestKapt = "com.google.dagger:hilt-android-compiler:${Version.daggerHiltAndroidTestImpl}"
+    const val daggerHiltAndroidTestImpl =
+        "com.google.dagger:hilt-android-testing:${Version.daggerHiltAndroidTestImpl}"
+    const val daggerHiltAndroidTestKapt =
+        "com.google.dagger:hilt-android-compiler:${Version.daggerHiltAndroidTestImpl}"
 }
 
 object Room {
@@ -145,7 +150,8 @@ object Room {
 }
 
 object CircularProgressBar {
-    const val swipeRefresh = "androidx.swiperefreshlayout:swiperefreshlayout:${Version.swipeRefresh}"
+    const val swipeRefresh =
+        "androidx.swiperefreshlayout:swiperefreshlayout:${Version.swipeRefresh}"
 }
 
 object LottieAnimations {
@@ -161,6 +167,8 @@ object JetpackCompose {
         "androidx.compose.ui:ui-tooling-preview:${Version.composeUiVersion}"
     const val composeMaterial = "androidx.compose.material:material:${Version.composeMaterial}"
     const val navigation = "androidx.navigation:navigation-compose:${Version.composeNavigation}"
+    const val composeLifecyleRuntime =
+        "androidx.lifecycle:lifecycle-runtime-compose:${Version.composeLifecycleRuntimeVersion}"
 }
 
 object ComposeAndroidTestImplementation {

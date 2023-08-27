@@ -41,12 +41,17 @@ android {
 
 dependencies {
 
+    implementation project(":core:common")
+
+    implementation project(":feature:movie:domain")
+
     implementation Deps.core
     implementation CoroutinesLifecycleScope.lifeCycleRuntime
     implementation JetpackCompose.composeActivity
     implementation JetpackCompose.composeUi
     implementation JetpackCompose.composeUiToolingPreview
     implementation JetpackCompose.composeMaterial
+    implementation JetpackCompose.composeLifecyleRuntime
 
     implementation DaggerHilt.hilt
     kapt DaggerHilt.hiltCompiler
