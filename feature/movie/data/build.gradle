@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.dagger.hilt.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -32,9 +34,20 @@ android {
 
 dependencies {
 
+    implementation project(":feature:movie:domain")
+    implementation project(":core:network")
+
     implementation Deps.core
     implementation Deps.appCompat
     implementation Deps.androidMaterial
+
+    implementation Retrofit.retrofit
+    implementation Retrofit.okHttp
+    implementation Retrofit.gsonConvertor
+
+    implementation DaggerHilt.hilt
+    kapt DaggerHilt.hiltCompiler
+
     testImplementation TestImplementation.junit
     testImplementation AndroidTestImplementation.junit
     testImplementation AndroidTestImplementation.espresso
