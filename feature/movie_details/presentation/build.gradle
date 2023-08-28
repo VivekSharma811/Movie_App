@@ -51,7 +51,6 @@ dependencies {
     implementation JetpackCompose.composeUi
     implementation JetpackCompose.composeUiToolingPreview
     implementation JetpackCompose.composeMaterial
-    implementation JetpackCompose.composeLifecyleRuntime
 
     implementation DaggerHilt.hilt
     kapt DaggerHilt.hiltCompiler

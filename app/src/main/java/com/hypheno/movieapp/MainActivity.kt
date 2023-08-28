@@ -13,6 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.feature.movie.presentation.navigation.movieNavGraph
+import com.feature.movie_details.presentation.navigation.movieDetailsNavGraph
 import com.hypheno.movieapp.ui.theme.MovieAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -30,6 +31,7 @@ class MainActivity : ComponentActivity() {
                     val navController = rememberNavController()
                     NavHost(navController = navController, startDestination = "movie_list") {
                         movieNavGraph()
+                        movieDetailsNavGraph()
                     }
                 }
             }
