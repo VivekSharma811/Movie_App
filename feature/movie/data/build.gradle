@@ -35,6 +35,7 @@ android {
 dependencies {
 
     implementation project(":feature:movie:domain")
+
     implementation project(":core:network")
 
     implementation Deps.core
