@@ -54,6 +54,10 @@ dependencies {
     implementation project(":feature:movie:data")
     implementation project(":feature:movie:domain")
 
+    implementation project(":feature:movie_details:presentation")
+    implementation project(":feature:movie_details:data")
+    implementation project(":feature:movie_details:domain")
+
     implementation Deps.core
     implementation CoroutinesLifecycleScope.lifeCycleRuntime
     implementation JetpackCompose.composeActivity

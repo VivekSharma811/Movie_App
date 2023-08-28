@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.dagger.hilt.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -13,6 +15,13 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.4.0'
     }
 
     buildTypes {
@@ -32,10 +41,31 @@ android {
 
 dependencies {
 
+    implementation project(":core:common")
+
+    implementation project(":feature:movie_details:domain")
+
     implementation Deps.core
-    implementation Deps.appCompat
-    implementation Deps.androidMaterial
+    implementation CoroutinesLifecycleScope.lifeCycleRuntime
+    implementation JetpackCompose.composeActivity
+    implementation JetpackCompose.composeUi
+    implementation JetpackCompose.composeUiToolingPreview
+    implementation JetpackCompose.composeMaterial
+    implementation JetpackCompose.composeLifecyleRuntime
+
+    implementation DaggerHilt.hilt
+    kapt DaggerHilt.hiltCompiler
+    implementation DaggerHilt.hiltComposeNavigation
+
+    implementation JetpackCompose.navigation
+
+    implementation CoilImageLoadingLib.coil
+
     testImplementation TestImplementation.junit
     testImplementation AndroidTestImplementation.junit
     testImplementation AndroidTestImplementation.espresso
+
+    androidTestImplementation ComposeAndroidTestImplementation.composeUiTest
+    debugImplementation ComposeDebugImplementation.toolingUi
+    debugImplementation ComposeDebugImplementation.manifestTest
 }

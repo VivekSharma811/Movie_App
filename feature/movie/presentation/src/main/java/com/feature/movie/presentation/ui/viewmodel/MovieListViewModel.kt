@@ -48,11 +48,13 @@ class MovieListViewModel @Inject constructor(
                 }
 
                 is NetworkResponse.Error -> {
-                    _movieListState.value = movieListState.value.copy(error = it.message.toString())
+                    _movieListState.value =
+                        movieListState.value.copy(isLoading = false, error = it.message.toString())
                 }
 
                 is NetworkResponse.Success -> {
-                    _movieListState.value = movieListState.value.copy(data = it.data)
+                    _movieListState.value =
+                        movieListState.value.copy(isLoading = false, data = it.data)
                 }
             }
         }.launchIn(viewModelScope)
