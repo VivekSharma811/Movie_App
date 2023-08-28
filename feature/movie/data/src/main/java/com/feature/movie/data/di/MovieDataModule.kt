@@ -23,13 +23,6 @@ object MovieDataModule {
 
     @Provides
     @Singleton
-    @Named("api_key")
-    fun provideApiKey(): String {
-        return ""
-    }
-
-    @Provides
-    @Singleton
     fun provideMovieRepository(
         movieDataSource: MovieDataSource,
         @Named("api_key") apiKey: String

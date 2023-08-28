@@ -2,6 +2,7 @@ package com.feature.movie.presentation.ui.screens
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -33,7 +34,8 @@ import com.feature.movie.presentation.ui.viewmodel.MovieListViewModel
 @Composable
 internal fun MovieListRoute(
     modifier: Modifier = Modifier,
-    viewModel: MovieListViewModel = hiltViewModel()
+    viewModel: MovieListViewModel = hiltViewModel(),
+    onMovieClicked: (String) -> Unit
 ) {
     val state by viewModel.movieListState
     val query by viewModel.query.collectAsStateWithLifecycle()
@@ -43,6 +45,7 @@ internal fun MovieListRoute(
         onQueryChanged = {
             viewModel.setQuery(it)
         },
+        onMovieClicked = onMovieClicked,
         modifier
     )
 }
@@ -53,6 +56,7 @@ internal fun MovieListScreen(
     state: MovieListState,
     query: String,
     onQueryChanged: (String) -> Unit,
+    onMovieClicked: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Scaffold(
@@ -107,6 +111,9 @@ internal fun MovieListScreen(
                                 .border(width = 1.dp, color = Color.White)
                         ) {
                             AsyncImage(
+                                modifier = Modifier.clickable {
+                                    onMovieClicked(it.id)
+                                },
                                 model = it.imageUrl,
                                 contentDescription = null,
                                 contentScale = ContentScale.Fit

@@ -4,8 +4,10 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.feature.movie.presentation.ui.screens.MovieListRoute
 
-fun NavGraphBuilder.movieNavGraph() {
+fun NavGraphBuilder.movieNavGraph(onMovieClicked: (String) -> Unit) {
     composable("movie_list") {
-        MovieListRoute()
+        MovieListRoute {
+            onMovieClicked(it)
+        }
     }
 }
