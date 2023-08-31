@@ -1,6 +1,6 @@
 package com.feature.movie.data.repo
 
-import com.core.network.movie.datasource.MovieDataSource
+import com.core.network.datasource.MovieDataSource
 import com.feature.movie.data.mapper.toMovieList
 import com.feature.movie.domain.model.Movie
 import com.feature.movie.domain.repo.MovieRepository

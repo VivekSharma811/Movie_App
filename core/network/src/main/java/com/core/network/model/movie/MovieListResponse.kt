@@ -1,4 +1,4 @@
-package com.core.network.movie.dto
+package com.core.network.model.movie
 
 data class MovieListResponse(
     val page: Int,

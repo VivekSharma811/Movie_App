@@ -1,6 +1,6 @@
-package com.core.network.retrofit
+package com.core.network.retrofit.api_service
 
-import com.core.network.movie.dto.MovieListResponse
+import com.core.network.model.movie.MovieListResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

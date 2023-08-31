@@ -1,13 +1,12 @@
 package com.core.network.di
 
-import com.core.network.movie.datasource.MovieDataSource
-import com.core.network.movie.datasource.MovieDataSourceRetrofit
-import com.core.network.retrofit.MovieApiService
+import com.core.network.datasource.MovieDataSource
+import com.core.network.retrofit.datasource.MovieDataSourceRetrofit
+import com.core.network.retrofit.api_service.MovieApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import retrofit2.Retrofit
 import javax.inject.Named
 import javax.inject.Singleton
 
@@ -22,13 +21,5 @@ object DataSourceModule {
         @Named("api_key") apiKey: String
     ): MovieDataSource {
         return MovieDataSourceRetrofit(movieApiService, apiKey)
-    }
-
-    @Provides
-    @Singleton
-    fun provideMovieApiService(
-        retrofit: Retrofit
-    ): MovieApiService {
-        return retrofit.create(MovieApiService::class.java)
     }
 }

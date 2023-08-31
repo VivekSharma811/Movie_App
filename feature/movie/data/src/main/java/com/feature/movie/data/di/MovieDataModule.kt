@@ -1,6 +1,6 @@
 package com.feature.movie.data.di
 
-import com.core.network.movie.datasource.MovieDataSource
+import com.core.network.datasource.MovieDataSource
 import com.feature.movie.data.repo.MovieRepositoryImpl
 import com.feature.movie.domain.repo.MovieRepository
 import dagger.Module

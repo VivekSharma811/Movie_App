@@ -1,6 +1,5 @@
 package com.core.network.di
 
-import com.core.network.retrofit.MovieApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

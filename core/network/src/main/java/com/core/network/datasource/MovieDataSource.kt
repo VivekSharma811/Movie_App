@@ -1,6 +1,6 @@
-package com.core.network.movie.datasource
+package com.core.network.datasource
 
-import com.core.network.movie.dto.MovieListResponse
+import com.core.network.model.movie.MovieListResponse
 
 interface MovieDataSource {
 
