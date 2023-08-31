@@ -1,14 +1,12 @@
 package com.feature.movie.data.di
 
-import com.feature.movie.data.remote.MovieDataSource
+import com.core.network.movie.datasource.MovieDataSource
 import com.feature.movie.data.repo.MovieRepositoryImpl
 import com.feature.movie.domain.repo.MovieRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import retrofit2.Retrofit
-import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -17,16 +15,9 @@ object MovieDataModule {
 
     @Provides
     @Singleton
-    fun provideMovieDataSource(retrofit: Retrofit): MovieDataSource {
-        return retrofit.create(MovieDataSource::class.java)
-    }
-
-    @Provides
-    @Singleton
     fun provideMovieRepository(
-        movieDataSource: MovieDataSource,
-        @Named("api_key") apiKey: String
+        movieDataSource: MovieDataSource
     ): MovieRepository {
-        return MovieRepositoryImpl(movieDataSource, apiKey)
+        return MovieRepositoryImpl(movieDataSource)
     }
 }

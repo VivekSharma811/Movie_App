@@ -1,10 +1,10 @@
-package com.feature.movie.data.remote
+package com.core.network.retrofit
 
-import com.feature.movie.data.remote.model.MovieListResponse
+import com.core.network.movie.dto.MovieListResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface MovieDataSource {
+interface MovieApiService {
 
     @GET("3/search/movie")
     suspend fun getMovieList(

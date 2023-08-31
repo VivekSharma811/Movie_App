@@ -1,6 +1,6 @@
 package com.feature.movie.data.mapper
 
-import com.feature.movie.data.remote.model.MovieListResponse
+import com.core.network.movie.dto.MovieListResponse
 import com.feature.movie.domain.model.Movie
 
 const val IMAGE_URL = "https://image.tmdb.org/t/p/w500/"

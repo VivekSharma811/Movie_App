@@ -1,4 +1,4 @@
-package com.feature.movie.data.remote.model
+package com.core.network.movie.dto
 
 data class MovieListResponse(
     val page: Int,

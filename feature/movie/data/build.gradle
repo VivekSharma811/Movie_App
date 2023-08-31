@@ -42,10 +42,6 @@ dependencies {
     implementation Deps.appCompat
     implementation Deps.androidMaterial
 
-    implementation Retrofit.retrofit
-    implementation Retrofit.okHttp
-    implementation Retrofit.gsonConvertor
-
     implementation DaggerHilt.hilt
     kapt DaggerHilt.hiltCompiler
 
